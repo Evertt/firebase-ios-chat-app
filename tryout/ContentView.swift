@@ -41,19 +41,12 @@ struct Chat: View {
     init(_ messages: [Message]) {
         self.messages = messages
         
-        if #available(iOS 14.0, *) {
-            // iOS 14 doesn't have extra separators below the list by default.
-        } else {
-            // To remove only extra separators below the list:
-            UITableView.appearance().tableFooterView = UIView()
-        }
-
-        // To remove all separators including the actual ones:
+        UITableView.appearance().tableFooterView = UIView()
         UITableView.appearance().separatorStyle = .none
     }
     
     var body: some View {
-        List(messages) { message in
+        List(messages.reversed()) { message in
             Bubble(message: message)
                 .frame(
                     width: 350,
@@ -68,7 +61,7 @@ struct Chat: View {
 }
 
 struct ContentView: View {
-    @Store("messages"|.order(by: "created", descending: true))
+    @Store("messages", { $0.order(by: "created") })
     var messages: [Message]
     
     @State private var message: String = ""
@@ -77,11 +70,7 @@ struct ContentView: View {
         VStack {
             Chat(messages)
             HStack {
-                TextField("Message", text: $message)
-                    .padding()
-                Button(action: sendMessage) {
-                    Text("Send")
-                }
+                TextField("Write message", text: $message, onCommit: sendMessage)
                     .padding()
             }
         }

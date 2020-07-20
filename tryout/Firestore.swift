@@ -8,15 +8,19 @@
 
 import SwiftUI
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class Observable<T: Codable>: ObservableObject {
     @Published var value = [T]()
     
+    let collectionReference: CollectionReference
     let query: Query
     var listener: ListenerRegistration? = nil
     
-    init(_ query: Query) {
+    init(collectionReference: CollectionReference, query: Query) {
+        self.collectionReference = collectionReference
         self.query = query
+        
         listener = self.query.addSnapshotListener { snapshot, error in
             guard let docs = snapshot?.documents else {
                 print(error!)
@@ -31,7 +35,7 @@ class Observable<T: Codable>: ObservableObject {
     
     func add(_ document: T) {
         do {
-            let _ = try query.collection.addDocument(from: document)
+            let _ = try collectionReference.addDocument(from: document)
         } catch {
             print(error)
         }
@@ -57,8 +61,11 @@ struct Store<T: Codable>: DynamicProperty {
         $observable.value
     }
     
-    init(_ q: Query) {
-        self.observable = Observable(q)
+    init(_ collectionPath: String, _ queryBuilder: (CollectionReference) -> Query) {
+        let collectionReference = Firestore.firestore().collection(collectionPath)
+        let query = queryBuilder(collectionReference)
+
+        observable = Observable(collectionReference: collectionReference, query: query)
     }
     
     public mutating func update() {

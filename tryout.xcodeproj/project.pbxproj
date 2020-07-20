@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0F001ACE24C4DFAC004032D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F001ACD24C4DFAC004032D6 /* GoogleService-Info.plist */; };
 		0F46FECF24C4F5840010CEF4 /* Firestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F46FECE24C4F5840010CEF4 /* Firestore.swift */; };
-		0F46FED124C591040010CEF4 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F46FED024C591040010CEF4 /* Query.swift */; };
 		0F46FED324C59B5E0010CEF4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F46FED224C59B5E0010CEF4 /* Message.swift */; };
 		0F5D9C0D24C4DADA004530BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D9C0C24C4DADA004530BD /* AppDelegate.swift */; };
 		0F5D9C0F24C4DADA004530BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D9C0E24C4DADA004530BD /* SceneDelegate.swift */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		0F001ACD24C4DFAC004032D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F46FECE24C4F5840010CEF4 /* Firestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firestore.swift; sourceTree = "<group>"; };
-		0F46FED024C591040010CEF4 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		0F46FED224C59B5E0010CEF4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0F5D9C0924C4DADA004530BD /* tryout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tryout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5D9C0C24C4DADA004530BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				0F5D9C1A24C4DAE0004530BD /* Info.plist */,
 				0F5D9C1424C4DAE0004530BD /* Preview Content */,
 				0F46FECE24C4F5840010CEF4 /* Firestore.swift */,
-				0F46FED024C591040010CEF4 /* Query.swift */,
 				0F46FED224C59B5E0010CEF4 /* Message.swift */,
 			);
 			path = tryout;
@@ -231,7 +228,6 @@
 				0F5D9C0F24C4DADA004530BD /* SceneDelegate.swift in Sources */,
 				0F5D9C1124C4DADA004530BD /* ContentView.swift in Sources */,
 				0F46FED324C59B5E0010CEF4 /* Message.swift in Sources */,
-				0F46FED124C591040010CEF4 /* Query.swift in Sources */,
 				0F46FECF24C4F5840010CEF4 /* Firestore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
