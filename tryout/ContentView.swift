@@ -10,6 +10,17 @@ import FirebaseFirestore
 import Foundation
 import SwiftUI
 
+struct CurrentUser: EnvironmentKey {
+    static var defaultValue: String = ""
+}
+
+extension EnvironmentValues {
+    var currentUser: String {
+        get { self[CurrentUser.self] }
+        set { self[CurrentUser.self] = newValue }
+    }
+}
+
 extension View {
     public func flip() -> some View {
         return self
@@ -19,23 +30,31 @@ extension View {
 }
 
 struct Bubble: View {
+    @Environment(\.currentUser) var me
     let message: Message
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(message.author)
-                .font(.headline)
+            if message.author != me {
+                Text(message.author)
+                    .font(.headline)
+            }
+            
             Text(message.body)
         }
         .foregroundColor(.white)
         .padding()
         .background(Color.blue)
         .cornerRadius(10)
+        .frame(
+                width: 350,
+                height: nil,
+                alignment: message.author == me ? .trailing : .leading
+        )
     }
 }
 
 struct Chat: View {
-    let author = "Evert"
     let messages: [Message]
     
     init(_ messages: [Message]) {
@@ -48,12 +67,6 @@ struct Chat: View {
     var body: some View {
         List(messages.reversed()) { message in
             Bubble(message: message)
-                .frame(
-                    width: 350,
-                    height: nil,
-                    alignment: message.author == self.author
-                        ? .trailing : .leading
-            )
             .flip()
         }
         .flip()
@@ -64,21 +77,46 @@ struct ContentView: View {
     @Store("messages", { $0.order(by: "created") })
     var messages: [Message]
     
+    @ObservedObject private var keyboard = KeyboardResponder()
+    
+    @State var me: String = ""
+    @State private var name: String = ""
     @State private var message: String = ""
     
     var body: some View {
         VStack {
-            Chat(messages)
-            HStack {
-                TextField("Write message", text: $message, onCommit: sendMessage)
-                    .padding()
+            if me == "" {
+                HStack {
+                    Spacer(minLength: 60)
+                    TextField("What is your name?", text: $name, onCommit: submitName)
+                    Spacer(minLength: 60)
+                }
+            } else {
+                Chat(messages)
+                HStack {
+                    TextField("Write message", text: $message, onCommit: sendMessage)
+                        .padding()
+                }
             }
         }
+        .padding(.bottom, keyboard.currentHeight)
+        .edgesIgnoringSafeArea(keyboard.currentHeight > 0 ? .bottom : [])
+        .animation(.easeOut(duration: 0.16))
+        .environment(\.currentUser, me)
+    }
+    
+    func submitName() {
+        guard name != "" else { return }
+        
+        me = name
+        name = ""
     }
     
     func sendMessage() {
+        guard message != "" else { return }
+        
         let message = Message(
-            author: "Evert",
+            author: me,
             body: self.message,
             created: Date()
         )

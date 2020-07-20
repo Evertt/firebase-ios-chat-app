@@ -16,6 +16,7 @@
 		0F5D9C1324C4DAE0004530BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D9C1224C4DAE0004530BD /* Assets.xcassets */; };
 		0F5D9C1624C4DAE0004530BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D9C1524C4DAE0004530BD /* Preview Assets.xcassets */; };
 		0F5D9C1924C4DAE0004530BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D9C1724C4DAE0004530BD /* LaunchScreen.storyboard */; };
+		0FFA7D2F24C5AC0300363B9F /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA7D2E24C5AC0300363B9F /* KeyboardResponder.swift */; };
 		9CD400B285BA2EC99D6E0F9B /* Pods_tryout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B2748FC674E8979F9FDDD0 /* Pods_tryout.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		0F5D9C1524C4DAE0004530BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0F5D9C1824C4DAE0004530BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F5D9C1A24C4DAE0004530BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FFA7D2E24C5AC0300363B9F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		1DC4E7D58C1D642FBE8A34B5 /* Pods-tryout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tryout.debug.xcconfig"; path = "Target Support Files/Pods-tryout/Pods-tryout.debug.xcconfig"; sourceTree = "<group>"; };
 		97B2748FC674E8979F9FDDD0 /* Pods_tryout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tryout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FF510D44D60867CE7E4C84 /* Pods-tryout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tryout.release.xcconfig"; path = "Target Support Files/Pods-tryout/Pods-tryout.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		0F5D9C0B24C4DADA004530BD /* tryout */ = {
 			isa = PBXGroup;
 			children = (
+				0FFA7D2E24C5AC0300363B9F /* KeyboardResponder.swift */,
 				0F001ACD24C4DFAC004032D6 /* GoogleService-Info.plist */,
 				0F5D9C0C24C4DADA004530BD /* AppDelegate.swift */,
 				0F5D9C0E24C4DADA004530BD /* SceneDelegate.swift */,
@@ -226,6 +229,7 @@
 			files = (
 				0F5D9C0D24C4DADA004530BD /* AppDelegate.swift in Sources */,
 				0F5D9C0F24C4DADA004530BD /* SceneDelegate.swift in Sources */,
+				0FFA7D2F24C5AC0300363B9F /* KeyboardResponder.swift in Sources */,
 				0F5D9C1124C4DADA004530BD /* ContentView.swift in Sources */,
 				0F46FED324C59B5E0010CEF4 /* Message.swift in Sources */,
 				0F46FECF24C4F5840010CEF4 /* Firestore.swift in Sources */,
@@ -370,6 +374,7 @@
 				DEVELOPMENT_TEAM = 2KD8R3DHVQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = tryout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,6 +396,7 @@
 				DEVELOPMENT_TEAM = 2KD8R3DHVQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = tryout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
