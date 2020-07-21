@@ -18,17 +18,17 @@ struct Chat: View {
                 Bubble(message: message, startEditing: self.startEditing)
                     .flip()
             }
-            .flip()
+                // I use the flipping to make the list
+                // automatically scroll to the bottom.
+                .flip()
             
-            HStack {
-                TextField("Write message", text: $message.body, onCommit: sendMessage)
-                    .padding()
-            }
+            TextField("Write message", text: $message.body, onCommit: sendMessage)
+                .padding()
         }
     }
     
-    func startEditing(message: Message) {
-        self.message = message
+    func startEditing(messageToEdit: Message) {
+        self.message = messageToEdit
     }
     
     func sendMessage() {
@@ -37,7 +37,13 @@ struct Chat: View {
         }
         
         message.author = me
-        message.created = Date()
+        
+        // We don't want to set the created date
+        // if the message is an existing one.
+        // I.e. when we're *editing* a message.
+        if message.id == nil {
+            message.created = Date()
+        }
         
         // this works both for adding a new message
         // and for editing an existing message

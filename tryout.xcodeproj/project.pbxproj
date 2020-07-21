@@ -83,18 +83,16 @@
 		0F5D9C0B24C4DADA004530BD /* tryout */ = {
 			isa = PBXGroup;
 			children = (
+				0F6419C124C79E20003A898C /* Utilities */,
+				0F6419C024C79DFE003A898C /* Delegates */,
 				0F6419B924C7816D003A898C /* Firestore */,
 				0F6419B024C77DE4003A898C /* Models */,
 				0F6419AF24C77DD3003A898C /* Views */,
-				0FFA7D2E24C5AC0300363B9F /* KeyboardResponder.swift */,
 				0F001ACD24C4DFAC004032D6 /* GoogleService-Info.plist */,
-				0F5D9C0C24C4DADA004530BD /* AppDelegate.swift */,
-				0F5D9C0E24C4DADA004530BD /* SceneDelegate.swift */,
 				0F5D9C1224C4DAE0004530BD /* Assets.xcassets */,
 				0F5D9C1724C4DAE0004530BD /* LaunchScreen.storyboard */,
 				0F5D9C1A24C4DAE0004530BD /* Info.plist */,
 				0F5D9C1424C4DAE0004530BD /* Preview Content */,
-				0F6419B724C780F8003A898C /* Environment+CurrentUser.swift */,
 			);
 			path = tryout;
 			sourceTree = "<group>";
@@ -134,6 +132,24 @@
 				0F6419BE24C7906C003A898C /* ObservableCollection.swift */,
 			);
 			path = Firestore;
+			sourceTree = "<group>";
+		};
+		0F6419C024C79DFE003A898C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0F5D9C0C24C4DADA004530BD /* AppDelegate.swift */,
+				0F5D9C0E24C4DADA004530BD /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		0F6419C124C79E20003A898C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0FFA7D2E24C5AC0300363B9F /* KeyboardResponder.swift */,
+				0F6419B724C780F8003A898C /* Environment+CurrentUser.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		7A0156AAE58233127BE12BDE /* Frameworks */ = {

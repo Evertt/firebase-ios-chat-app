@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SignIn: View {
-    @Binding var me: String
+    @Binding var currentUser: String
     @State private var newName: String = ""
     
     var body: some View {
@@ -17,7 +17,7 @@ struct SignIn: View {
             return
         }
         
-        me = newName
+        currentUser = newName
         newName = ""
     }
 }

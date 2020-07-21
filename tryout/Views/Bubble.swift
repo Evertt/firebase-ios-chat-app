@@ -1,16 +1,15 @@
 import SwiftUI
 
 struct Bubble: View {
-    @Environment(\.currentUser) var me
     let message: Message
     let startEditing: (Message) -> ()
-    
-    var isMe: Bool {
-        message.author == me
-    }
+    @Environment(\.currentUser) var me
+    var isMe: Bool { message.author == me }
     
     var body: some View {
         VStack(alignment: .leading) {
+            // Only show the author's name
+            // if the author isn't me.
             if !isMe {
                 Text(message.author)
                     .font(.headline)
@@ -18,13 +17,17 @@ struct Bubble: View {
             
             Text(message.body)
         }
-        .foregroundColor(.white)
         .padding()
-        .background(Color.blue)
+        // Make my bubbles light green and their bubbles light gray.
+        .background(isMe ? Color.green.opacity(0.4) : Color.gray.opacity(0.1))
+        .foregroundColor(Color.black.opacity(0.7))
         .cornerRadius(10)
+        .shadow(color: Color.black.opacity(0.15), radius: 1, x: 0.5, y: 0.5)
         .frame(
                 width: 350,
                 height: nil,
+                // Put my messages on the right,
+                // and their messages on the left.
                 alignment: isMe ? .trailing : .leading
         )
         .contextMenu(!isMe ? nil : ContextMenu {
