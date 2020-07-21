@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F001ACE24C4DFAC004032D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F001ACD24C4DFAC004032D6 /* GoogleService-Info.plist */; };
-		0F46FECF24C4F5840010CEF4 /* Firestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F46FECE24C4F5840010CEF4 /* Firestore.swift */; };
+		0F46FECF24C4F5840010CEF4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F46FECE24C4F5840010CEF4 /* Store.swift */; };
 		0F46FED324C59B5E0010CEF4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F46FED224C59B5E0010CEF4 /* Message.swift */; };
 		0F5D9C0D24C4DADA004530BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D9C0C24C4DADA004530BD /* AppDelegate.swift */; };
 		0F5D9C0F24C4DADA004530BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D9C0E24C4DADA004530BD /* SceneDelegate.swift */; };
@@ -16,13 +16,19 @@
 		0F5D9C1324C4DAE0004530BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D9C1224C4DAE0004530BD /* Assets.xcassets */; };
 		0F5D9C1624C4DAE0004530BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D9C1524C4DAE0004530BD /* Preview Assets.xcassets */; };
 		0F5D9C1924C4DAE0004530BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D9C1724C4DAE0004530BD /* LaunchScreen.storyboard */; };
+		0F6419B224C77E1A003A898C /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6419B124C77E1A003A898C /* Bubble.swift */; };
+		0F6419B424C77E2D003A898C /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6419B324C77E2D003A898C /* Chat.swift */; };
+		0F6419B624C77E5D003A898C /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6419B524C77E5D003A898C /* SignIn.swift */; };
+		0F6419B824C780F8003A898C /* Environment+CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6419B724C780F8003A898C /* Environment+CurrentUser.swift */; };
+		0F6419BB24C7818F003A898C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6419BA24C7818F003A898C /* Model.swift */; };
+		0F6419BD24C781D6003A898C /* ObservableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6419BC24C781D6003A898C /* ObservableCollection.swift */; };
 		0FFA7D2F24C5AC0300363B9F /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA7D2E24C5AC0300363B9F /* KeyboardResponder.swift */; };
 		9CD400B285BA2EC99D6E0F9B /* Pods_tryout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B2748FC674E8979F9FDDD0 /* Pods_tryout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F001ACD24C4DFAC004032D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0F46FECE24C4F5840010CEF4 /* Firestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firestore.swift; sourceTree = "<group>"; };
+		0F46FECE24C4F5840010CEF4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		0F46FED224C59B5E0010CEF4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0F5D9C0924C4DADA004530BD /* tryout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tryout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5D9C0C24C4DADA004530BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +38,12 @@
 		0F5D9C1524C4DAE0004530BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0F5D9C1824C4DAE0004530BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F5D9C1A24C4DAE0004530BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F6419B124C77E1A003A898C /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
+		0F6419B324C77E2D003A898C /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		0F6419B524C77E5D003A898C /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		0F6419B724C780F8003A898C /* Environment+CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+CurrentUser.swift"; sourceTree = "<group>"; };
+		0F6419BA24C7818F003A898C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		0F6419BC24C781D6003A898C /* ObservableCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableCollection.swift; sourceTree = "<group>"; };
 		0FFA7D2E24C5AC0300363B9F /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		1DC4E7D58C1D642FBE8A34B5 /* Pods-tryout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tryout.debug.xcconfig"; path = "Target Support Files/Pods-tryout/Pods-tryout.debug.xcconfig"; sourceTree = "<group>"; };
 		97B2748FC674E8979F9FDDD0 /* Pods_tryout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tryout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,17 +83,18 @@
 		0F5D9C0B24C4DADA004530BD /* tryout */ = {
 			isa = PBXGroup;
 			children = (
+				0F6419B924C7816D003A898C /* Firestore */,
+				0F6419B024C77DE4003A898C /* Models */,
+				0F6419AF24C77DD3003A898C /* Views */,
 				0FFA7D2E24C5AC0300363B9F /* KeyboardResponder.swift */,
 				0F001ACD24C4DFAC004032D6 /* GoogleService-Info.plist */,
 				0F5D9C0C24C4DADA004530BD /* AppDelegate.swift */,
 				0F5D9C0E24C4DADA004530BD /* SceneDelegate.swift */,
-				0F5D9C1024C4DADA004530BD /* ContentView.swift */,
 				0F5D9C1224C4DAE0004530BD /* Assets.xcassets */,
 				0F5D9C1724C4DAE0004530BD /* LaunchScreen.storyboard */,
 				0F5D9C1A24C4DAE0004530BD /* Info.plist */,
 				0F5D9C1424C4DAE0004530BD /* Preview Content */,
-				0F46FECE24C4F5840010CEF4 /* Firestore.swift */,
-				0F46FED224C59B5E0010CEF4 /* Message.swift */,
+				0F6419B724C780F8003A898C /* Environment+CurrentUser.swift */,
 			);
 			path = tryout;
 			sourceTree = "<group>";
@@ -92,6 +105,35 @@
 				0F5D9C1524C4DAE0004530BD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0F6419AF24C77DD3003A898C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F5D9C1024C4DADA004530BD /* ContentView.swift */,
+				0F6419B124C77E1A003A898C /* Bubble.swift */,
+				0F6419B324C77E2D003A898C /* Chat.swift */,
+				0F6419B524C77E5D003A898C /* SignIn.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0F6419B024C77DE4003A898C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F46FED224C59B5E0010CEF4 /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F6419B924C7816D003A898C /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				0F46FECE24C4F5840010CEF4 /* Store.swift */,
+				0F6419BA24C7818F003A898C /* Model.swift */,
+				0F6419BC24C781D6003A898C /* ObservableCollection.swift */,
+			);
+			path = Firestore;
 			sourceTree = "<group>";
 		};
 		7A0156AAE58233127BE12BDE /* Frameworks */ = {
@@ -228,11 +270,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F5D9C0D24C4DADA004530BD /* AppDelegate.swift in Sources */,
+				0F6419B624C77E5D003A898C /* SignIn.swift in Sources */,
 				0F5D9C0F24C4DADA004530BD /* SceneDelegate.swift in Sources */,
 				0FFA7D2F24C5AC0300363B9F /* KeyboardResponder.swift in Sources */,
 				0F5D9C1124C4DADA004530BD /* ContentView.swift in Sources */,
+				0F6419B224C77E1A003A898C /* Bubble.swift in Sources */,
+				0F6419BD24C781D6003A898C /* ObservableCollection.swift in Sources */,
+				0F6419B824C780F8003A898C /* Environment+CurrentUser.swift in Sources */,
+				0F6419B424C77E2D003A898C /* Chat.swift in Sources */,
+				0F6419BB24C7818F003A898C /* Model.swift in Sources */,
 				0F46FED324C59B5E0010CEF4 /* Message.swift in Sources */,
-				0F46FECF24C4F5840010CEF4 /* Firestore.swift in Sources */,
+				0F46FECF24C4F5840010CEF4 /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

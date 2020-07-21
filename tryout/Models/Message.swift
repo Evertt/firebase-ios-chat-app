@@ -9,10 +9,12 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Message: Codable, Identifiable {
+struct Message: Model {
+    static let collectionPath: String = "messages"
+    
     @DocumentID
-    var id: String?
-    let author: String
-    let body: String
-    let created: Date
+    var id: String? = nil
+    var author: String = ""
+    var body: String = ""
+    var created: Date = Date()
 }
