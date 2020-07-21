@@ -18,7 +18,7 @@ struct ContentView: View {
     private var keyboard = KeyboardResponder()
     
     @State
-    private var currentUser: String = "" // "Evert" // for testing purposes
+    private var currentUser: String = "Evert" // for testing purposes
     
     var body: some View {
         VStack {

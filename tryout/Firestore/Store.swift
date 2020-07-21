@@ -10,12 +10,12 @@ import SwiftUI
 import FirebaseFirestore
 
 @propertyWrapper
-struct Store<T: Model>: DynamicProperty {
-    @ObservedObject var observable: ObservableCollection<T>
-    public var wrappedValue: [T] { observable.models }
+struct Store<ModelType: Model>: DynamicProperty {
+    @ObservedObject var observable: ObservableCollection<ModelType>
+    public var wrappedValue: [ModelType] { observable.models }
     
     init(_ queryBuilder: ((CollectionReference) -> Query)? = nil) {
-        let collectionReference = Firestore.firestore().collection(T.collectionPath)
+        let collectionReference = Firestore.firestore().collection(ModelType.collectionPath)
         let query = queryBuilder?(collectionReference) ?? collectionReference
 
         observable = ObservableCollection(collectionReference: collectionReference, query: query)
