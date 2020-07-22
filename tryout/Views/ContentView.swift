@@ -11,6 +11,7 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
+    /// This is all the messages from Firestore, ordered by their created date.
     @Store({ $0.order(by: "created") })
     private var messages: [Message]
     
@@ -29,7 +30,7 @@ struct ContentView: View {
             }
         }
         // We use this padding to slide the view up
-        // when the keyboard becomes visible
+        // when the keyboard becomes visible.
         .padding(.bottom, keyboard.currentHeight)
         .edgesIgnoringSafeArea(keyboard.currentHeight > 0 ? .bottom : [])
         .animation(.easeOut(duration: 0.16))

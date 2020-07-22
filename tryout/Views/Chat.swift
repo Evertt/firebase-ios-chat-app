@@ -3,11 +3,13 @@ import SwiftUI
 struct Chat: View {
     let messages: [Message]
     @Environment(\.currentUser) var me
-    @State private var message = Message()
+    @State private var draftMessage = Message()
+    @State private var draftBackup = Message()
     
     init(_ messages: [Message]) {
         self.messages = messages
         
+        // These lines remove the separator lines in the list view.
         UITableView.appearance().tableFooterView = UIView()
         UITableView.appearance().separatorStyle = .none
     }
@@ -18,43 +20,46 @@ struct Chat: View {
                 Bubble(message: message, startEditing: self.startEditing)
                     .flip()
             }
-                // I use the flipping to make the list
-                // automatically scroll to the bottom.
+                // I flip the list and all its items
+                // so that it automatically scrolls to the bottom.
                 .flip()
             
-            TextField("Write message", text: $message.body, onCommit: sendMessage)
+            if draftMessage.existsInFirestore {
+                Text("Editing:")
+            }
+            
+            TextField("Write message", text: $draftMessage.body, onCommit: submitMessage)
                 .padding()
         }
     }
     
     func startEditing(messageToEdit: Message) {
-        self.message = messageToEdit
+        // We backup whatever message the user was writing.
+        // So that the user can continue with that message
+        // when they're done editing this message.
+        draftBackup = draftMessage
+        draftMessage = messageToEdit
     }
     
-    func sendMessage() {
-        guard message.body != "" else {
+    /// Submit a new message or an edited existing message.
+    func submitMessage() {
+        guard draftMessage.body != "" else {
             return
         }
         
-        message.author = me
+        draftMessage.author = me
         
-        // We don't want to set the created date
-        // if the message is an existing one.
-        // I.e. when we're *editing* a message.
-        if message.id == nil {
-            message.created = Date()
+        // If this message does not yet
+        // exist in Firestore, then we want
+        // to set the created date to now.
+        if !draftMessage.existsInFirestore {
+            draftMessage.created = Date()
         }
         
-        // this works both for adding a new message
-        // and for editing an existing message
-        message.save()
+        draftMessage.save()
         
-        // If we were editing a message,
-        // then it had an id. We empty the id,
-        // so that the state goes back
-        // to writing a new message.
-        message.id = nil
-        message.body = ""
+        draftMessage = draftBackup
+        draftBackup = Message()
     }
 }
 

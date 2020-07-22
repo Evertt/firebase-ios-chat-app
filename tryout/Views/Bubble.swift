@@ -18,7 +18,7 @@ struct Bubble: View {
             Text(message.body)
         }
         .padding()
-        // Make my bubbles light green and their bubbles light gray.
+        /// Make *my* bubbles light green and *their* bubbles light gray.
         .background(isMe ? Color.green.opacity(0.4) : Color.gray.opacity(0.1))
         .foregroundColor(Color.black.opacity(0.7))
         .cornerRadius(10)
@@ -26,8 +26,8 @@ struct Bubble: View {
         .frame(
                 width: 350,
                 height: nil,
-                // Put my messages on the right,
-                // and their messages on the left.
+                /// Put *my* messages on the right,
+                /// and *their* messages on the left.
                 alignment: isMe ? .trailing : .leading
         )
         .contextMenu(!isMe ? nil : ContextMenu {

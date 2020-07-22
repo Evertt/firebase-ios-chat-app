@@ -7,7 +7,10 @@ struct SignIn: View {
     var body: some View {
         HStack {
             Spacer(minLength: 60)
-            TextField("What is your name?", text: $newName, onCommit: submitName)
+            TextField(
+                "Fill in your name and press return",
+                text: $newName, onCommit: submitName
+            )
             Spacer(minLength: 60)
         }
     }
