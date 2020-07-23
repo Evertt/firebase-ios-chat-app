@@ -18,6 +18,10 @@ struct Collection<ModelType: Model>: DynamicProperty {
     @ObservedObject var observable: ObservableCollection<ModelType>
     public var wrappedValue: [ModelType] { observable.models }
     
+    public var projectedValue: Binding<[ModelType]> {
+        $observable.models
+    }
+    
     /**
         - Parameter queryBuilder: An optional closure to build a query with, for the store to subscribe to.
                                   If omitted then the store will simply subscribe to the collection as a whole.

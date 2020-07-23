@@ -1,10 +1,11 @@
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 /**
     You need to conform your models to this protocol so that the
     `Store` property wrapper can use them with Firebase's firestore.
  */
-protocol Model: Codable, Identifiable {
+protocol Model: Codable, Identifiable, Hashable {
     /// The path to the collection in Firestore.
     static var collectionPath: String { get }
     

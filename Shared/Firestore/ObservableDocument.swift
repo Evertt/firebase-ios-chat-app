@@ -29,7 +29,7 @@ class ObservableDocument<ModelType: Model>: ObservableObject {
                 } catch {
                    print(error)
                 }
-        }
+            }
     }
     
     deinit {

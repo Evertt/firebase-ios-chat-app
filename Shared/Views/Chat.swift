@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 struct Chat: View {
     let messages: [Message]
@@ -6,26 +7,24 @@ struct Chat: View {
     @State private var draftMessage = Message()
     @State private var draftBackup = Message()
     
-    init(_ messages: [Message]) {
-        self.messages = messages
-        
-        // These lines remove the separator lines in the list view.
-        UITableView.appearance().tableFooterView = UIView()
-        UITableView.appearance().separatorStyle = .none
-    }
-    
     var body: some View {
         Group {
-            List(messages.reversed()) { message in
-                Bubble(message: message, startEditing: self.startEditing)
-                    .flip()
-            }
-                // I flip the list and all its items
-                // so that it automatically scrolls to the bottom.
-                .flip()
+            ScrollView(.vertical) {
+                LazyVStack {
+                    ForEach(messages.reversed()) { message in
+                        Bubble(message: message, startEditing: self.startEditing)
+                            .padding(.top, 10).flip()
+                    }
+                }
+            }.flip()
             
             if draftMessage.existsInFirestore {
                 Text("Editing:")
+                    .padding(.top)
+                    .transition(AnyTransition
+                                    .move(edge: .bottom)
+                                    .combined(with: .opacity)
+                    )
             }
             
             TextField("Write message", text: $draftMessage.body, onCommit: submitMessage)
@@ -60,13 +59,5 @@ struct Chat: View {
         
         draftMessage = draftBackup
         draftBackup = Message()
-    }
-}
-
-extension View {
-    public func flip(_ flip: Bool = true) -> some View {
-        return self
-            .rotationEffect(.radians(flip ? .pi : 0))
-            .scaleEffect(x: flip ? -1 : 1, y: 1, anchor: .center)
     }
 }

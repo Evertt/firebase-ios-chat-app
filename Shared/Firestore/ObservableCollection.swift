@@ -1,5 +1,6 @@
 import SwiftUI
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class ObservableCollection<ModelType: Model>: ObservableObject {
     @Published var models = [ModelType]()

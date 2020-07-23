@@ -1,11 +1,11 @@
 //
 //  ContentView.swift
-//  tryout
+//  Shared
 //
-//  Created by Evert van Brussel on 19/07/2020.
-//  Copyright © 2020 Evert van Brussel. All rights reserved.
+//  Created by Evert van Brussel on 23/07/2020.
 //
 
+import Firebase
 import FirebaseFirestore
 import Foundation
 import SwiftUI
@@ -15,18 +15,18 @@ struct ContentView: View {
     @Collection({ $0.order(by: "created") })
     private var messages: [Message]
     
-    @ObservedObject // To observe the keyboard height
+    @StateObject // To observe the keyboard height
     private var keyboard = KeyboardResponder()
     
     @State
-    private var currentUser: String = "" // "Evert" // for testing purposes
+    private var currentUser: String = "Evert" // for testing purposes
     
     var body: some View {
         VStack {
             if currentUser == "" {
                 SignIn(currentUser: $currentUser)
             } else {
-                Chat(messages)
+                Chat(messages: messages)
             }
         }
         // We use this padding to slide the view up
