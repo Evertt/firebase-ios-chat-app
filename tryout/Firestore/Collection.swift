@@ -14,7 +14,7 @@ import FirebaseFirestore
     And whenever a new snapshot comes in, it updates the wrapped `[Model]` value.
  */
 @propertyWrapper
-struct Store<ModelType: Model>: DynamicProperty {
+struct Collection<ModelType: Model>: DynamicProperty {
     @ObservedObject var observable: ObservableCollection<ModelType>
     public var wrappedValue: [ModelType] { observable.models }
     

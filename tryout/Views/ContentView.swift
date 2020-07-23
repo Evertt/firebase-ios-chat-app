@@ -12,7 +12,7 @@ import SwiftUI
 
 struct ContentView: View {
     /// This is all the messages from Firestore, ordered by their created date.
-    @Store({ $0.order(by: "created") })
+    @Collection({ $0.order(by: "created") })
     private var messages: [Message]
     
     @ObservedObject // To observe the keyboard height

@@ -6,6 +6,7 @@ target 'tryout' do
   use_frameworks!
 
   # Pods for tryout
+  pod 'FirebaseUI'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
