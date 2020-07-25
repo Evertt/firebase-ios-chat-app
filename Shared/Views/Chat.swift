@@ -9,14 +9,10 @@ struct Chat: View {
     
     var body: some View {
         Group {
-            ScrollView(.vertical) {
-                LazyVStack {
-                    ForEach(messages.reversed()) { message in
-                        Bubble(message: message, startEditing: self.startEditing)
-                            .padding(.top, 10).flip()
-                    }
-                }
-            }.flip()
+            LazyUpsideDownVScroll(messages) { message in
+                Bubble(message: message, startEditing: self.startEditing)
+                    .padding(.top, 10)
+            }
             
             if draftMessage.existsInFirestore {
                 Text("Editing:")
@@ -29,6 +25,7 @@ struct Chat: View {
             
             TextField("Write message", text: $draftMessage.body, onCommit: submitMessage)
                 .padding()
+                .onExitCommand(perform: resetMessage)
         }
     }
     
@@ -57,6 +54,10 @@ struct Chat: View {
         
         draftMessage.save()
         
+        resetMessage()
+    }
+    
+    func resetMessage() {
         draftMessage = draftBackup
         draftBackup = Message()
     }

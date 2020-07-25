@@ -34,4 +34,10 @@ extension View {
             .rotationEffect(.radians(flip ? .pi : 0))
             .scaleEffect(x: flip ? -1 : 1, y: 1, anchor: .center)
     }
+    
+    #if os(iOS) || os(watchOS)
+    public func onExitCommand(perform action: (() -> Void)?) -> some View {
+        return self
+    }
+    #endif
 }

@@ -42,6 +42,7 @@ struct Bubble: View {
                 Image(systemName: "pencil")
             }
         })
+        .padding(isMe ? .leading : .trailing, 25)
         .frame(
                 width: 350,
                 height: nil,
