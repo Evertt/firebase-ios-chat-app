@@ -11,11 +11,11 @@ struct LazyUpsideDownVScroll<Data, Content>: View where Data : RandomAccessColle
     
     /// The collection of underlying identified data that SwiftUI uses to create
     /// views dynamically.
-    var data: Data
+    let data: Data
 
     /// A function you can use to create content on demand using the underlying
     /// data.
-    var content: (Data.Element) -> Content
+    let content: (Data.Element) -> Content
     
     /// Creates an instance that uniquely identifies and creates views across
     /// updates based on the identity of the underlying data.

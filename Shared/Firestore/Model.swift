@@ -10,7 +10,7 @@ protocol Model: Codable, Identifiable, Hashable {
     static var collectionPath: String { get }
     
     /// The document id from Firestore. If this model has not yet been added to Firestore then the id will be nil.
-    var id: String? { get }
+    var id: String { get }
 }
 
 extension Model {
@@ -18,28 +18,30 @@ extension Model {
         Firestore.firestore().collection(Self.collectionPath)
     }
     
-    private var docRef: DocumentReference? {
-        guard let id = id else { return nil }
+    var docRef: DocumentReference {
         return Self.colRef.document(id)
     }
     
+    var _id: MyDocumentID {
+        guard let id = Mirror(reflecting: self).descendant("_id") as? MyDocumentID else {
+            fatalError("id property must be declared using @MyDocumentID")
+        }
+        return id
+    }
+    
     var existsInFirestore: Bool {
-        id != nil
+        _id.existsInFirestore
     }
     
     /// Delete this model from Firestore.
     func delete() {
-        docRef?.delete()
+        docRef.delete()
     }
     
     /// Save this model in Firestore, either as a new document or by updating the existing one.
     func save() {
         do {
-            if let docRef = docRef {
-                try docRef.setData(from: self)
-            } else {
-                let _ = try Self.colRef.addDocument(from: self)
-            }
+            try docRef.setData(from: self)
         } catch {
             print(error)
         }

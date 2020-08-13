@@ -1,11 +1,28 @@
 import SwiftUI
 import Foundation
 
-struct Chat: View {
-    let messages: [Message]
+struct ChatRoom: View {
+    let room: Room
+    
+    /// This is all the messages from Firestore, ordered by their created date.
+    @Collection private var messages: [Message]
+
     @Environment(\.currentUser) var me
-    @State private var draftMessage = Message()
-    @State private var draftBackup = Message()
+    @State private var draftMessage: Message
+    @State private var draftBackup: Message
+    
+    init(_ room: Room) {
+        self.room = room
+        
+        _messages = Collection { query in
+            query
+                .whereField("room", isEqualTo: room.docRef)
+                .order(by: "created")
+        }
+        
+        _draftMessage = State(initialValue: room.draftMessage())
+        _draftBackup = _draftMessage
+    }
     
     var body: some View {
         Group {
@@ -59,6 +76,6 @@ struct Chat: View {
     
     func resetMessage() {
         draftMessage = draftBackup
-        draftBackup = Message()
+        draftBackup = room.draftMessage()
     }
 }

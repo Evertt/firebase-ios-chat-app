@@ -11,7 +11,7 @@ class ObservableDocument<ModelType: Model>: ObservableObject {
         // We subscribe to live snapshots on the query
         listener = Firestore.firestore()
             .collection(ModelType.collectionPath)
-            .document(model.id!)
+            .document(model.id)
             .addSnapshotListener { snapshot, error in
                 guard let snapshot = snapshot else {
                     print(error!)

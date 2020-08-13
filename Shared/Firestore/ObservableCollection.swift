@@ -18,7 +18,12 @@ class ObservableCollection<ModelType: Model>: ObservableObject {
             // And fill / replace our models array with
             // the results from every new snapshot.
             self.models = docs.compactMap {
-                try? $0.data(as: ModelType.self)
+                do {
+                    return try $0.data(as: ModelType.self)
+                } catch {
+                    print(error)
+                    return nil
+                }
             }
         }
     }

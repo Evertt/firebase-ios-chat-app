@@ -13,6 +13,11 @@ target 'tryout (iOS)' do
 
   pod 'FirebaseUI'
   shared_pods
+
+  target 'Tests iOS' do
+    inherit! :search_paths
+    pod 'Firebase'
+  end
 end
 
 target 'tryout (macOS)' do
@@ -21,4 +26,9 @@ target 'tryout (macOS)' do
   use_frameworks!
 
   shared_pods
+
+  target 'Tests macOS' do
+    inherit! :search_paths
+    pod 'Firebase'
+  end
 end
