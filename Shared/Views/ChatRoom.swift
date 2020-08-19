@@ -16,7 +16,7 @@ struct ChatRoom: View {
         
         _messages = Collection { query in
             query
-                .whereField("room", isEqualTo: room.docRef)
+                .whereField("room", isEqualTo: room.id!)
                 .order(by: "created")
         }
         

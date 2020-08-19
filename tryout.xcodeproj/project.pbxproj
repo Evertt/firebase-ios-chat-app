@@ -44,6 +44,10 @@
 		0F3128EB24C9869E00702FDE /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128E524C9869E00702FDE /* SignIn.swift */; };
 		0F3128ED24C99B1A00702FDE /* DocumentID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128EC24C99B1A00702FDE /* DocumentID.swift */; };
 		0F3128EE24C99B1A00702FDE /* DocumentID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128EC24C99B1A00702FDE /* DocumentID.swift */; };
+		0F4261BE24E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */; };
+		0F4261BF24E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */; };
+		0F4261C024E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */; };
+		0F4261C124E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */; };
 		0F5D2B2424E285710067E960 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128CC24C985DD00702FDE /* Collection.swift */; };
 		0F5D2B2524E285720067E960 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128CC24C985DD00702FDE /* Collection.swift */; };
 		0F5D2B2624E285770067E960 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128C924C985DD00702FDE /* Document.swift */; };
@@ -134,6 +138,7 @@
 		0F3128E424C9869E00702FDE /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		0F3128E524C9869E00702FDE /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		0F3128EC24C99B1A00702FDE /* DocumentID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentID.swift; sourceTree = "<group>"; };
+		0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DocumentID+Hashable.swift"; sourceTree = "<group>"; };
 		0F6A95AF24C9BE750096771A /* Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
 		0FE80F4624E164240060A36C /* macOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOSView.swift; sourceTree = "<group>"; };
 		1DE6DC38E0634A0E21FF36AC /* Pods-Tests iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests iOS.release.xcconfig"; path = "Target Support Files/Pods-Tests iOS/Pods-Tests iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -298,6 +303,7 @@
 		0F3128D824C9865200702FDE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */,
 				0F3128D924C9866200702FDE /* Environment+CurrentUser.swift */,
 				0F3128EC24C99B1A00702FDE /* DocumentID.swift */,
 				0F6A95AF24C9BE750096771A /* Miscellaneous.swift */,
@@ -694,6 +700,7 @@
 				0F3128DB24C9866200702FDE /* Environment+CurrentUser.swift in Sources */,
 				0F3128ED24C99B1A00702FDE /* DocumentID.swift in Sources */,
 				0F212F1724CC3E3600F6812F /* iOSView.swift in Sources */,
+				0F4261BE24E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */,
 				0F3128D224C985DD00702FDE /* ObservableDocument.swift in Sources */,
 				0F31289E24C97D6100702FDE /* tryoutApp.swift in Sources */,
 				0F3128DD24C9866200702FDE /* KeyboardObserver.swift in Sources */,
@@ -725,6 +732,7 @@
 				0F3128D524C985DD00702FDE /* Collection.swift in Sources */,
 				0F6A95B124C9BE750096771A /* Miscellaneous.swift in Sources */,
 				0F3128E224C9868000702FDE /* Message.swift in Sources */,
+				0F4261BF24E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */,
 				0F3128D124C985DD00702FDE /* ObservableCollection.swift in Sources */,
 				0F3128CF24C985DD00702FDE /* Document.swift in Sources */,
 			);
@@ -748,6 +756,7 @@
 				0F5D2B2824E2857A0067E960 /* Model.swift in Sources */,
 				0F5D2B3E24E285A20067E960 /* Miscellaneous.swift in Sources */,
 				0F5D2B2C24E285820067E960 /* ObservableDocument.swift in Sources */,
+				0F4261C024E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */,
 				0F5D2B3424E285910067E960 /* ChatRoom.swift in Sources */,
 				0F5D2B2E24E285860067E960 /* Message.swift in Sources */,
 			);
@@ -758,6 +767,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F5D2B2B24E2857F0067E960 /* ObservableCollection.swift in Sources */,
+				0F4261C124E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */,
 				0F5D2B3324E2858D0067E960 /* Bubble.swift in Sources */,
 				0F5D2B3F24E285A40067E960 /* Miscellaneous.swift in Sources */,
 				0F5D2B3B24E2859D0067E960 /* Environment+CurrentUser.swift in Sources */,

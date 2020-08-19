@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FirebaseFirestore
+@testable import FirebaseFirestore
 @testable import FirebaseFirestoreSwift
 
 /// A value that is populated in Codable objects with the `DocumentReference`
@@ -25,106 +25,51 @@ import FirebaseFirestore
 /// NOTE: Trying to encode/decode this type using encoders/decoders other than
 /// Firestore.Encoder leads to an error.
 @propertyWrapper
-struct MyDocumentID: DocumentIDProtocol, Codable, Hashable {
-    var value: String
-    let docRef: DocumentReference?
+class Ref<T: Model>: Codable, Hashable {
+    static func == (lhs: Ref<T>, rhs: Ref<T>) -> Bool {
+        return lhs.documentReference?.documentID == rhs.documentReference?.documentID
+    }
     
-    var existsInFirestore: Bool {
-        docRef != nil
-    }
-
-    public init(wrappedValue value: String) {
-        self.value = value
-        docRef = nil
-    }
-
-    public var wrappedValue: String {
-        get { value }
-        set { value = newValue }
-    }
-
-    // MARK: - `DocumentIDProtocol` conformance
-
-    init(from documentReference: DocumentReference?) {
-        docRef = documentReference
-        
-        if let documentReference = documentReference {
-            value = documentReference.documentID
-        } else {
-            value = UUID().description
-        }
-    }
-
-    // MARK: - `Codable` implementation.
-
-    init(from decoder: Decoder) throws {
-        throw FirestoreDecodingError.decodingIsNotSupported(
-            "DocumentID values can only be decoded with Firestore.Decoder"
-        )
-    }
-
-    func encode(to encoder: Encoder) throws {
-        throw FirestoreEncodingError.encodingIsNotSupported(
-            "DocumentID values can only be encoded with Firestore.Encoder"
-        )
-    }
-}
-
-@propertyWrapper
-struct ID: DocumentIDProtocol, Codable, Hashable {
-    public var wrappedValue: DocumentReference?
-    
-    var existsInFirestore: Bool {
-        wrappedValue != nil
-    }
-
-    public init(wrappedValue value: DocumentReference?) {
-        wrappedValue = value
-    }
-
-    // MARK: - `DocumentIDProtocol` conformance
-
-    init(from documentReference: DocumentReference?) {
-        wrappedValue = documentReference
-    }
-
-    // MARK: - `Codable` implementation.
-
-    init(from decoder: Decoder) throws {
-        throw FirestoreDecodingError.decodingIsNotSupported(
-            "DocumentID values can only be decoded with Firestore.Decoder"
-        )
-    }
-
-    func encode(to encoder: Encoder) throws {
-        throw FirestoreEncodingError.encodingIsNotSupported(
-            "DocumentID values can only be encoded with Firestore.Encoder"
-        )
-    }
-}
-
-@propertyWrapper
-class Ref<T: Model> {
     var documentReference: DocumentReference?
-    var wrappedValue: T? = nil
     var listener: ListenerRegistration? = nil
+    var model: T? = nil
     
-    func load() {
-        documentReference?.getDocument { snapshot, error in
-            guard let snapshot = snapshot else {
-                print(error!)
-                return
+    var wrappedValue: T? {
+        get {
+            if listener == nil {
+                startListening()
             }
             
-            do {
-                self.wrappedValue = try snapshot.data(as: T.self)
-            } catch {
-                print(error)
+            return model
+        }
+        
+        set {
+            if newValue?.id != model?.id {
+                listener?.remove()
+                listener = nil
             }
+            
+            model = newValue
         }
     }
     
-    func live() {
+    var existsInFirestore: Bool {
+        documentReference != nil
+    }
+    
+    public init(wrappedValue value: T?) {
+        model = value
+        documentReference = model?.id
+    }
+
+    // MARK: - `Codable` implementation.
+
+    required init(from decoder: Decoder) throws {
+        let decoder = decoder as! _FirestoreDecoder
+        documentReference = try decoder.decode(DocumentReference.self)
+    }
+    
+    func startListening() {
         guard listener == nil else { return }
         
         listener = documentReference?.addSnapshotListener { snapshot, error in
@@ -134,11 +79,19 @@ class Ref<T: Model> {
             }
             
             do {
-                self.wrappedValue = try snapshot.data(as: T.self)
+                self.model = try snapshot.data(as: T.self)
             } catch {
                 print(error)
             }
         }
+    }
+
+    func encode(to encoder: Encoder) throws {
+        try documentReference.encode(to: encoder)
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(documentReference?.documentID)
     }
     
     deinit {

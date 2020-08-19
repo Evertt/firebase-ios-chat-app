@@ -8,27 +8,15 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct Message: Model {
-    @MyDocumentID
-    var id: String
+    static let collectionPath: String = "messages"
+    
+    @DocumentID
+    var id: DocumentReference? = nil
     var author: String = ""
     var body: String = ""
     var created: Date = Date()
-    var room: DocumentReference
-    
-    init(
-        id: String = UUID().description,
-        author: String = "", body: String = "",
-        room: DocumentReference,
-        created: Date = Date()
-    ) {
-        self.id = id
-        self.author = author
-        self.body = body
-        self.room = room
-        self.created = created
-    }
-    
-    static let collectionPath: String = "messages"
+    @Ref var room: Room?
 }

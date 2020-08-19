@@ -1,5 +1,6 @@
 import SwiftUI
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class ObservableDocument<ModelType: Model>: ObservableObject {
     @Published var model: ModelType
@@ -8,16 +9,17 @@ class ObservableDocument<ModelType: Model>: ObservableObject {
     
     init(model: ModelType) {
         self.model = model
+        
         // We subscribe to live snapshots on the query
         listener = Firestore.firestore()
             .collection(ModelType.collectionPath)
-            .document(model.id)
+            .document(model.id!.documentID)
             .addSnapshotListener { snapshot, error in
                 guard let snapshot = snapshot else {
                     print(error!)
                     return
                 }
-                
+
                 // And fill / replace our models array with
                 // the results from every new snapshot.
                 do {
