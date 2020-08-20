@@ -32,14 +32,14 @@ struct Bubble: View {
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.15), radius: 1, x: 0.5, y: 0.5)
         .contextMenu(!isMe ? nil : ContextMenu {
-            Button(action: delayed(duration, message.delete)) {
-                Text("Delete")
-                Image(systemName: "trash")
-            }
-            
             Button(action: delayed(duration, { startEditing(message) })) {
                 Text("Edit")
                 Image(systemName: "pencil")
+            }
+            
+            Button(action: delayed(duration, message.delete)) {
+                Text("Delete")
+                Image(systemName: "trash")
             }
         })
         .padding(isMe ? .leading : .trailing, 25)

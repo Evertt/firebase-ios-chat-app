@@ -30,7 +30,7 @@ struct Collection<ModelType: Model>: DynamicProperty {
         let collectionReference = Firestore.firestore().collection(ModelType.collectionPath)
         let query = queryBuilder?(collectionReference) ?? collectionReference
 
-        observable = ObservableCollection(collectionReference: collectionReference, query: query)
+        observable = ObservableCollection(query: query)
     }
     
     init(wait: Bool) {
