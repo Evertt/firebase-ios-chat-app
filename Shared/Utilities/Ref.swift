@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import FirebaseFirestore
+import FirebaseFirestore
 @testable import FirebaseFirestoreSwift
 
 /// A value that is populated in Codable objects with the `DocumentReference`
@@ -25,13 +25,13 @@ import Foundation
 /// NOTE: Trying to encode/decode this type using encoders/decoders other than
 /// Firestore.Encoder leads to an error.
 @propertyWrapper
-class Ref<T: Model>: Codable, Hashable {
+class Ref<T: Model>: Codable, Hashable, ObservableObject {
     static func == (lhs: Ref<T>, rhs: Ref<T>) -> Bool {
         return lhs.documentReference?.documentID == rhs.documentReference?.documentID
     }
     
     var documentReference: DocumentReference?
-    var listener: ListenerRegistration? = nil
+    @Published var listener: ListenerRegistration? = nil
     var model: T? = nil
     
     var wrappedValue: T? {
@@ -62,8 +62,6 @@ class Ref<T: Model>: Codable, Hashable {
         documentReference = model?.id
     }
 
-    // MARK: - `Codable` implementation.
-
     required init(from decoder: Decoder) throws {
         let decoder = decoder as! _FirestoreDecoder
         documentReference = try decoder.decode(DocumentReference.self)
@@ -72,16 +70,22 @@ class Ref<T: Model>: Codable, Hashable {
     func startListening() {
         guard listener == nil else { return }
         
+        if let documentReference = documentReference {
+            track("\nListening to \(documentReference.documentID)")
+        }
+        
         listener = documentReference?.addSnapshotListener { snapshot, error in
             guard let snapshot = snapshot else {
-                print(error!)
+                track(error!)
                 return
             }
+            
+            track("\nSnapshot: \(snapshot.data()!)")
             
             do {
                 self.model = try snapshot.data(as: T.self)
             } catch {
-                print(error)
+                track(error)
             }
         }
     }

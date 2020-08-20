@@ -36,7 +36,7 @@ extension Model {
                 let _ = try Self.colRef.addDocument(from: self)
             }
         } catch {
-            print(error)
+            track(error)
         }
     }
 }

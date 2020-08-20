@@ -62,8 +62,8 @@
             filePath = "Shared/Firestore/ObservableCollection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "init(collectionReference:query:)"
             landmarkType = "7">
          </BreakpointContent>

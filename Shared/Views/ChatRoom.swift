@@ -4,8 +4,8 @@ import Foundation
 struct ChatRoom: View {
     let room: Room
     
-    /// This is all the messages from Firestore, ordered by their created date.
-    @Collection private var messages: [Message]
+    @Collection(wait: true)
+    private var messages: [Message]
 
     @Environment(\.currentUser) var me
     @State private var draftMessage: Message

@@ -13,6 +13,10 @@ func delayed(_ seconds: Double, _ fn: @escaping () -> ()) -> () -> () {
     }
 }
 
+func track(_ message: Any, file: String = #file, function: String = #function, line: Int = #line) {
+    print("\n\(message)\nCalled from \(function) \(file):\(line)\n")
+}
+
 extension Double {
     var seconds: Double { self }
 }

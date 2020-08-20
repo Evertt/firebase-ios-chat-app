@@ -42,8 +42,8 @@
 		0F3128E924C9869E00702FDE /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128E424C9869E00702FDE /* ChatRoom.swift */; };
 		0F3128EA24C9869E00702FDE /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128E524C9869E00702FDE /* SignIn.swift */; };
 		0F3128EB24C9869E00702FDE /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128E524C9869E00702FDE /* SignIn.swift */; };
-		0F3128ED24C99B1A00702FDE /* DocumentID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128EC24C99B1A00702FDE /* DocumentID.swift */; };
-		0F3128EE24C99B1A00702FDE /* DocumentID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128EC24C99B1A00702FDE /* DocumentID.swift */; };
+		0F3128ED24C99B1A00702FDE /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128EC24C99B1A00702FDE /* Ref.swift */; };
+		0F3128EE24C99B1A00702FDE /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128EC24C99B1A00702FDE /* Ref.swift */; };
 		0F4261BE24E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */; };
 		0F4261BF24E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */; };
 		0F4261C024E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */; };
@@ -72,8 +72,8 @@
 		0F5D2B3924E285990067E960 /* LazyUpsideDownVScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A683924CC1A2900148D37 /* LazyUpsideDownVScroll.swift */; };
 		0F5D2B3A24E2859C0067E960 /* Environment+CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128D924C9866200702FDE /* Environment+CurrentUser.swift */; };
 		0F5D2B3B24E2859D0067E960 /* Environment+CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128D924C9866200702FDE /* Environment+CurrentUser.swift */; };
-		0F5D2B3C24E2859F0067E960 /* DocumentID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128EC24C99B1A00702FDE /* DocumentID.swift */; };
-		0F5D2B3D24E285A00067E960 /* DocumentID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128EC24C99B1A00702FDE /* DocumentID.swift */; };
+		0F5D2B3C24E2859F0067E960 /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128EC24C99B1A00702FDE /* Ref.swift */; };
+		0F5D2B3D24E285A00067E960 /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3128EC24C99B1A00702FDE /* Ref.swift */; };
 		0F5D2B3E24E285A20067E960 /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A95AF24C9BE750096771A /* Miscellaneous.swift */; };
 		0F5D2B3F24E285A40067E960 /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A95AF24C9BE750096771A /* Miscellaneous.swift */; };
 		0F5D2B4024E285A90067E960 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F3128B224C980C100702FDE /* GoogleService-Info.plist */; };
@@ -137,7 +137,7 @@
 		0F3128E324C9869E00702FDE /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		0F3128E424C9869E00702FDE /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		0F3128E524C9869E00702FDE /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
-		0F3128EC24C99B1A00702FDE /* DocumentID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentID.swift; sourceTree = "<group>"; };
+		0F3128EC24C99B1A00702FDE /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DocumentID+Hashable.swift"; sourceTree = "<group>"; };
 		0F6A95AF24C9BE750096771A /* Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
 		0FE80F4624E164240060A36C /* macOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOSView.swift; sourceTree = "<group>"; };
@@ -305,7 +305,7 @@
 			children = (
 				0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */,
 				0F3128D924C9866200702FDE /* Environment+CurrentUser.swift */,
-				0F3128EC24C99B1A00702FDE /* DocumentID.swift */,
+				0F3128EC24C99B1A00702FDE /* Ref.swift */,
 				0F6A95AF24C9BE750096771A /* Miscellaneous.swift */,
 			);
 			path = Utilities;
@@ -698,7 +698,7 @@
 				0F3128EA24C9869E00702FDE /* SignIn.swift in Sources */,
 				0F3128E824C9869E00702FDE /* ChatRoom.swift in Sources */,
 				0F3128DB24C9866200702FDE /* Environment+CurrentUser.swift in Sources */,
-				0F3128ED24C99B1A00702FDE /* DocumentID.swift in Sources */,
+				0F3128ED24C99B1A00702FDE /* Ref.swift in Sources */,
 				0F212F1724CC3E3600F6812F /* iOSView.swift in Sources */,
 				0F4261BE24E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */,
 				0F3128D224C985DD00702FDE /* ObservableDocument.swift in Sources */,
@@ -724,7 +724,7 @@
 				0F3128EB24C9869E00702FDE /* SignIn.swift in Sources */,
 				0F3128E924C9869E00702FDE /* ChatRoom.swift in Sources */,
 				0F3128DC24C9866200702FDE /* Environment+CurrentUser.swift in Sources */,
-				0F3128EE24C99B1A00702FDE /* DocumentID.swift in Sources */,
+				0F3128EE24C99B1A00702FDE /* Ref.swift in Sources */,
 				0F3128D324C985DD00702FDE /* ObservableDocument.swift in Sources */,
 				0F31289F24C97D6100702FDE /* tryoutApp.swift in Sources */,
 				0FE80F4724E164240060A36C /* macOSView.swift in Sources */,
@@ -743,7 +743,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F31289124C97D6100702FDE /* Tests_iOS.swift in Sources */,
-				0F5D2B3C24E2859F0067E960 /* DocumentID.swift in Sources */,
+				0F5D2B3C24E2859F0067E960 /* Ref.swift in Sources */,
 				0F5D2B4224E285B40067E960 /* tryoutApp.swift in Sources */,
 				0F5D2B3824E285980067E960 /* LazyUpsideDownVScroll.swift in Sources */,
 				0F5D2B3224E2858D0067E960 /* Bubble.swift in Sources */,
@@ -772,7 +772,7 @@
 				0F5D2B3F24E285A40067E960 /* Miscellaneous.swift in Sources */,
 				0F5D2B3B24E2859D0067E960 /* Environment+CurrentUser.swift in Sources */,
 				0F5D2B2924E2857B0067E960 /* Model.swift in Sources */,
-				0F5D2B3D24E285A00067E960 /* DocumentID.swift in Sources */,
+				0F5D2B3D24E285A00067E960 /* Ref.swift in Sources */,
 				0F5D2B3924E285990067E960 /* LazyUpsideDownVScroll.swift in Sources */,
 				0F5D2B2724E285780067E960 /* Document.swift in Sources */,
 				0F5D2B2524E285720067E960 /* Collection.swift in Sources */,

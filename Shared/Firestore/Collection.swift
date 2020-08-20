@@ -32,4 +32,12 @@ struct Collection<ModelType: Model>: DynamicProperty {
 
         observable = ObservableCollection(collectionReference: collectionReference, query: query)
     }
+    
+    init(wait: Bool) {
+        if wait {
+            observable = ObservableCollection()
+        } else {
+            self = .init()
+        }
+    }
 }

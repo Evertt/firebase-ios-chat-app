@@ -16,7 +16,7 @@ class ObservableDocument<ModelType: Model>: ObservableObject {
             .document(model.id!.documentID)
             .addSnapshotListener { snapshot, error in
                 guard let snapshot = snapshot else {
-                    print(error!)
+                    track(error!)
                     return
                 }
 
@@ -26,10 +26,10 @@ class ObservableDocument<ModelType: Model>: ObservableObject {
                     if let model = try snapshot.data(as: ModelType.self) {
                         self.model = model
                     } else {
-                        print("Document did not exist.")
+                        track("Document did not exist.")
                     }
                 } catch {
-                   print(error)
+                   track(error)
                 }
             }
     }
