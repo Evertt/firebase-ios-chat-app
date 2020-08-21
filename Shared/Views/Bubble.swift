@@ -20,7 +20,9 @@ struct Bubble: View {
             // if the author isn't me.
             if !isMe {
                 Text(message.author)
-                    .font(.headline)
+                    .font(.footnote)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 2)
             }
             
             Text(message.body)
@@ -42,10 +44,10 @@ struct Bubble: View {
                 Image(systemName: "trash")
             }
         })
-        .padding(isMe ? .leading : .trailing, 25)
+        .padding(isMe ? .leading : .trailing, 40)
+        .padding(isMe ? .trailing : .leading, 20)
         .frame(
-                width: 350,
-                height: nil,
+                maxWidth: .infinity,
                 /// Put *my* messages on the right,
                 /// and *their* messages on the left.
                 alignment: isMe ? .trailing : .leading
