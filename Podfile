@@ -21,7 +21,7 @@ target 'tryout (iOS)' do
 end
 
 target 'tryout (macOS)' do
-  platform :macos, '10.15'
+  platform :macos, '11.0'
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 

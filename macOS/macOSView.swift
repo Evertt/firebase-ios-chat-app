@@ -39,6 +39,7 @@ struct macOSView: View {
 struct macOSView_Previews: PreviewProvider {
     static var previews: some View {
         macOSView()
+            .environment(\.colorScheme, .dark)
     }
 }
 

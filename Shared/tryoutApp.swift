@@ -24,3 +24,15 @@ struct tryoutApp: App {
         }
     }
 }
+
+struct tryoutApp_Previews: PreviewProvider {
+    static var previews: some View {
+        #if os(iOS)
+            iOSView()
+                .environment(\.colorScheme, .dark)
+        #else
+            macOSView()
+                .environment(\.colorScheme, .dark)
+        #endif
+    }
+}
