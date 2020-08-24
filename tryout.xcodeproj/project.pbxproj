@@ -82,6 +82,10 @@
 		0F5D2B4324E285B50067E960 /* tryoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F31287524C97D6000702FDE /* tryoutApp.swift */; };
 		0F6A95B024C9BE750096771A /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A95AF24C9BE750096771A /* Miscellaneous.swift */; };
 		0F6A95B124C9BE750096771A /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A95AF24C9BE750096771A /* Miscellaneous.swift */; };
+		0FC28D4D24F19CCE00D1C824 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC28D4C24F19CCE00D1C824 /* Color.swift */; };
+		0FC28D4E24F19CCE00D1C824 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC28D4C24F19CCE00D1C824 /* Color.swift */; };
+		0FC28D5124F19CF900D1C824 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC28D5024F19CF900D1C824 /* Color.swift */; };
+		0FC28D5224F19CF900D1C824 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC28D5024F19CF900D1C824 /* Color.swift */; };
 		0FE80F4724E164240060A36C /* macOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE80F4624E164240060A36C /* macOSView.swift */; };
 		0FE80F4824E164240060A36C /* macOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE80F4624E164240060A36C /* macOSView.swift */; };
 		65180966196904315D018981 /* Pods_Tests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C463A795C6BA7CC465366F /* Pods_Tests_macOS.framework */; };
@@ -140,6 +144,8 @@
 		0F3128EC24C99B1A00702FDE /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		0F4261BD24E54CF600FD88FB /* DocumentID+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DocumentID+Hashable.swift"; sourceTree = "<group>"; };
 		0F6A95AF24C9BE750096771A /* Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
+		0FC28D4C24F19CCE00D1C824 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0FC28D5024F19CF900D1C824 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0FE80F4624E164240060A36C /* macOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOSView.swift; sourceTree = "<group>"; };
 		1DE6DC38E0634A0E21FF36AC /* Pods-Tests iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests iOS.release.xcconfig"; path = "Target Support Files/Pods-Tests iOS/Pods-Tests iOS.release.xcconfig"; sourceTree = "<group>"; };
 		25C41990BF5FEBFF9487D65F /* Pods_Tests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				0F3128DA24C9866200702FDE /* KeyboardObserver.swift */,
+				0FC28D4C24F19CCE00D1C824 /* Color.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 		0F31288524C97D6100702FDE /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				0FC28D4F24F19CDE00D1C824 /* Utilities */,
 				0F31288624C97D6100702FDE /* Info.plist */,
 				0F31288724C97D6100702FDE /* macOS.entitlements */,
 				0FE80F4624E164240060A36C /* macOSView.swift */,
@@ -318,6 +326,14 @@
 				0F212F1B24CC439C00F6812F /* Room.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0FC28D4F24F19CDE00D1C824 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0FC28D5024F19CF900D1C824 /* Color.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		84210347B931014E03C39F51 /* Frameworks */ = {
@@ -705,6 +721,7 @@
 				0F31289E24C97D6100702FDE /* tryoutApp.swift in Sources */,
 				0F3128DD24C9866200702FDE /* KeyboardObserver.swift in Sources */,
 				0F3128E624C9869E00702FDE /* Bubble.swift in Sources */,
+				0FC28D4D24F19CCE00D1C824 /* Color.swift in Sources */,
 				0F3128D424C985DD00702FDE /* Collection.swift in Sources */,
 				0F6A95B024C9BE750096771A /* Miscellaneous.swift in Sources */,
 				0F212F1924CC40B200F6812F /* KeyboardAwareView.swift in Sources */,
@@ -735,6 +752,7 @@
 				0F4261BF24E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */,
 				0F3128D124C985DD00702FDE /* ObservableCollection.swift in Sources */,
 				0F3128CF24C985DD00702FDE /* Document.swift in Sources */,
+				0FC28D5124F19CF900D1C824 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +777,7 @@
 				0F4261C024E54CF700FD88FB /* DocumentID+Hashable.swift in Sources */,
 				0F5D2B3424E285910067E960 /* ChatRoom.swift in Sources */,
 				0F5D2B2E24E285860067E960 /* Message.swift in Sources */,
+				0FC28D4E24F19CCE00D1C824 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,6 +796,7 @@
 				0F5D2B2724E285780067E960 /* Document.swift in Sources */,
 				0F5D2B2524E285720067E960 /* Collection.swift in Sources */,
 				0FE80F4824E164240060A36C /* macOSView.swift in Sources */,
+				0FC28D5224F19CF900D1C824 /* Color.swift in Sources */,
 				0F5D2B3124E2858A0067E960 /* Room.swift in Sources */,
 				0F5D2B3724E285950067E960 /* SignIn.swift in Sources */,
 				0F5D2B2F24E285860067E960 /* Message.swift in Sources */,
@@ -854,6 +874,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -907,6 +929,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;

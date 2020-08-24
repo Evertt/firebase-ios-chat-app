@@ -29,10 +29,10 @@ struct Bubble: View {
         }
         .padding()
         /// Make *my* bubbles light green and *their* bubbles light gray.
-        .background(isMe ? Color.green.opacity(0.4) : Color.gray.opacity(0.1))
-        .foregroundColor(Color.black.opacity(0.7))
+        .background(isMe ? Color.systemGreen.opacity(0.4) : Color.quaternary.opacity(0.8))
+        .foregroundColor(Color.primary.opacity(0.8))
         .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.15), radius: 1, x: 0.5, y: 0.5)
+        .shadow(color: Color.primary.opacity(0.25), radius: 1, x: 0.5, y: 0.5)
         .contextMenu(!isMe ? nil : ContextMenu {
             Button(action: delayed(duration, { startEditing(message) })) {
                 Text("Edit")
